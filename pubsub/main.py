@@ -3,17 +3,33 @@ import sys
 sys.path.append('.')
 
 from pubsub.celebrity import Celebrity
+from pubsub.buzzfeed import Buzzfeed
 from pubsub.washingtonPost import WashingtonPost
+from pubsub.wsj import Wsj
 
 
 def main():
-    test_celeb = Celebrity("TestHero", ['1', '2', '3'])
-    news = WashingtonPost()
-    news.set_publisher(test_celeb)
+    beethoven = Celebrity("Beethoven", [
+        'I want to seize fate by the throat',
+        'Music is a higher revelation than all wisdom and philosophy',
+        'Must it be? It must be'
+    ])
+    news1 = WashingtonPost()
+    news2 = Buzzfeed()
+    news3 = Wsj()
+    news1.set_publisher(beethoven)
+    news2.set_publisher(beethoven)
+    news3.set_publisher(beethoven)
+    print
 
-    test_celeb.scramble_button()
-    test_celeb.scramble_button()
-    test_celeb.scramble_button()
+    beethoven.change_of_heart()
+    print
+
+    beethoven.change_of_heart()
+    print
+
+    beethoven.change_of_heart()
+    print
 
 if __name__ == '__main__':
     main()

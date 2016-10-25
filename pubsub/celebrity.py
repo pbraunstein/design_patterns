@@ -16,7 +16,7 @@ class Celebrity(Publisher):
     def get_name(self):
         return self.name
 
-    def scramble_button(self):
+    def change_of_heart(self):
         """
         Makes the celebrity change his/her motto and update subscribers
         """

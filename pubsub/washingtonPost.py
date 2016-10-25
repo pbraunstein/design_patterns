@@ -1,20 +1,9 @@
-from pubsub.observer import Observer
+from pubsub.newspaper import Newspaper
 
 
-class WashingtonPost(Observer):
+class WashingtonPost(Newspaper):
     def __init__(self):
-        self.publisher = None
-        self.publisher_name = None
-        self.name = "Washington Post"
-
-    def set_publisher(self, publisher):
-        self.publisher = publisher
-        self.publisher.add_observer(self)
-        self.publisher_name = publisher.get_name()
-        print "%s now following %s" % (
-            self.name,
-            self.publisher_name
-        )
+        super(WashingtonPost, self).__init__("Washington Post")
 
     def update(self, motto):
         print "%s reports that %s said %s" % (
@@ -22,8 +11,3 @@ class WashingtonPost(Observer):
             self.publisher_name,
             motto
         )
-
-    def unfollow(self):
-        self.publisher.remove_observer(self)
-        self.publisher = None
-        self.publisher_name = None
