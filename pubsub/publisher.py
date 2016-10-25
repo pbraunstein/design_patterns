@@ -5,6 +5,12 @@ class Publisher:
     __metaclass__ = ABCMeta
 
     @abstractmethod
+    def get_name(self):
+        """
+        Each child must implement this
+        """
+
+    @abstractmethod
     def notify_observers(self):
         """
         Each child must implement this
