@@ -19,13 +19,19 @@ def main():
     news3 = Wsj()
     news1.set_publisher(beethoven)
     news2.set_publisher(beethoven)
+    print
+
+    beethoven.change_of_heart()
+    print
+
     news3.set_publisher(beethoven)
     print
 
     beethoven.change_of_heart()
     print
 
-    beethoven.change_of_heart()
+    news1.unfollow()
+    news3.unfollow()
     print
 
     beethoven.change_of_heart()

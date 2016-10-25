@@ -21,5 +21,9 @@ class Newspaper(Observer):
 
     def unfollow(self):
         self.publisher.remove_observer(self)
+        print "%s no longer following %s" % (
+            self.name,
+            self.publisher_name
+        )
         self.publisher = None
         self.publisher_name = None
