@@ -16,6 +16,13 @@ class Celebrity(Publisher):
     def get_name(self):
         return self.name
 
+    def scramble_button(self):
+        """
+        Makes the celebrity change his/her motto and update subscribers
+        """
+        self._choose_motto()
+        self.notify_observers()
+
     def notify_observers(self):
         for to_notify in self.newspapers:
             to_notify.update(self.current_motto)

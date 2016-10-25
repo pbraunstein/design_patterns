@@ -11,6 +11,10 @@ class WashingtonPost(Observer):
         self.publisher = publisher
         self.publisher.add_observer(self)
         self.publisher_name = publisher.get_name()
+        print "%s now following %s" % (
+            self.name,
+            self.publisher_name
+        )
 
     def update(self, motto):
         print "%s reports that %s said %s" % (
